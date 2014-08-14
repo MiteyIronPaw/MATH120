@@ -1,11 +1,5 @@
 from math import *
 
-def print_gcd_working(steps):
-	for step in steps:
-		x = step[0] * step[1] + step[2]
-		print("{} = {}({})+{}".format(x, step[0], step[1], step[2]))
-
-
 def gcd(a, b):
 	if b > a:
 		a, b = b, a
@@ -24,8 +18,15 @@ def gcd(a, b):
 	return out
 
 
-def lcm(a, b):
-	return a*b // gcd(a, b)[-1][1]
+def print_gcd_working(steps):
+	for step in steps:
+		x = step[0] * step[1] + step[2]
+		print("{} = {}({})+{}".format(x, step[0], step[1], step[2]))
+
+
+def lcm(steps):
+	s = steps[0]
+	return (s[0] * s[1] + s[2]) * steps[0][1] // steps[-1][1]
 
 
 def lcom(steps):
@@ -54,5 +55,5 @@ def prime_factorise(number):
 steps = gcd(5460, 1148)
 
 print_gcd_working(steps)
-print("lcm " + str(lcm(5460, 1148)))
+print("lcm " + str(lcm(steps)))
 lcom(steps)

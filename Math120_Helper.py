@@ -35,6 +35,24 @@ def lcom(steps):
 		print(steps[i])
 		i -= 1
 
+def prime_gen(x):
+	primes = [2,3]
+	num = 4
+	while x > primes[-1]:
+		is_prime = True
+		
+		for prime in primes:
+			if num % prime == 0:
+				is_prime = False
+				break
+				
+		if is_prime:
+			primes.append(num)
+		num += 1
+		
+	return primes
+			
+
 
 def prime_factorise(number):
     '''Finds the prime factorisation of a number'''
@@ -57,3 +75,5 @@ steps = gcd(5460, 1148)
 print_gcd_working(steps)
 print("lcm " + str(lcm(steps)))
 lcom(steps)
+
+print(prime_gen(100))

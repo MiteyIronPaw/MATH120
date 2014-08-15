@@ -36,7 +36,7 @@ def find_primes(x):
 
 
 def find_primes2(number):
-	'''Tom's atemp at using a Sieve it sieve out ~80% of the numbers then uses Hayden's technique'''
+	'''Tom's atemp at using a Sieve it sieves out ~80% of the numbers then uses Hayden's technique'''
 	start_time = time.time()
 	x = round(sqrt(number))
 	
